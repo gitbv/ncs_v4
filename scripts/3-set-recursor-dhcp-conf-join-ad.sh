@@ -2,7 +2,7 @@
 #yum -y install epel-release yum-plugin-priorities
 curl -o /etc/yum.repos.d/powerdns-rec-42.repo https://repo.powerdns.com/repo-files/centos-rec-42.repo
 yum -y update
-yum -y install pdns-recursor dhcp
+yum -y install pdns-recursor dhcp pbis-open
 
 cat > /etc/pdns-recursor/forward.conf <<eof
 +green-pass.eu=10.91.226.10,10.91.230.10,10.91.242.10,10.91.246.10
