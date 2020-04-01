@@ -1,5 +1,5 @@
 #!/bin/bash
-yum -y install epel-release yum-plugin-priorities
+#yum -y install epel-release yum-plugin-priorities
 curl -o /etc/yum.repos.d/powerdns-rec-42.repo https://repo.powerdns.com/repo-files/centos-rec-42.repo
 yum -y update
 yum -y install pdns-recursor dhcp
