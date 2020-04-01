@@ -19,8 +19,8 @@ echo "GATEWAYDEV=ens192.20" >> /etc/sysconfig/network
 if [ -f vlans.txt ];
 then
 
-echo "# ip routes" > /root/scripts/ncs/routes.sh
-chmod +x /root/scripts/ncs/routes.sh
+echo "# ip routes" > routes.sh
+chmod +x routes.sh
 
 echo "#" > /etc/iproute2/rt_tables
 echo "# reserved values" >> /etc/iproute2/rt_tables
@@ -56,7 +56,7 @@ echo "IPADDR=$IP" >> /etc/sysconfig/network-scripts/ifcfg-ens192.$ID
 echo "NETMASK=$NM" >> /etc/sysconfig/network-scripts/ifcfg-ens192.$ID
 echo "GATEWAY=$GW" >> /etc/sysconfig/network-scripts/ifcfg-ens192.$ID
 
-echo "ip route add table $NA default nexthop via $GW dev ens192.$ID" >> /root/scripts/ncs/routes.sh
+echo "ip route add table $NA default nexthop via $GW dev ens192.$ID" >> routes.sh
 
 done
 echo "#" >> /etc/iproute2/rt_tables
