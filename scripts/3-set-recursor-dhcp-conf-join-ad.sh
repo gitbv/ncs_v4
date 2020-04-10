@@ -130,7 +130,7 @@ else
 echo "Please be sure you had vlans.txt file and the given information is correct, then start over again"
 fi
 
-yum install -y open-pbis
+
 if [ -f /opt/pbis/bin/domainjoin-cli ];
 then
 echo -e "\n\033[5;4;47;34m  Type your a.account to join to tls.ad  \033[0m\n"
