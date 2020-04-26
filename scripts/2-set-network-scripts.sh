@@ -65,8 +65,6 @@ else
    echo "Run the script in the same directory with vlans.txt"
 fi
 
-echo -e "\n\033[5;4;47;34mCreating sub-interfaces, please wait... \033[0m\n"
-systemctl restart network
 
 # add firewalld policies
 echo -e "\n\033[5;4;47;34m Firewalld settings \033[0m\n"
@@ -89,3 +87,7 @@ firewall-cmd --permanent --zone=public --add-port=161/udp
 firewall-cmd --permanent --zone=public --add-port=873/tcp
 # reload
 firewall-cmd --reload
+
+echo -e "\n\033[5;4;47;34mCreating sub-interfaces, please wait... \033[0m\n"
+systemctl restart network
+
