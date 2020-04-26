@@ -67,3 +67,25 @@ fi
 
 echo -e "\n\033[5;4;47;34mCreating sub-interfaces, please wait... \033[0m\n"
 systemctl restart network
+
+# add firewalld policies
+echo -e "\n\033[5;4;47;34m Firewalld settings \033[0m\n"
+# ssh
+firewall-cmd --permanent --zone=public --add-port=13333/tcp
+# dns
+firewall-cmd --permanent --zone=public --add-port=53/tcp
+firewall-cmd --permanent --zone=public --add-port=53/udp
+# pdns-recursor webserver
+firewall-cmd --permanent --zone=public --add-port=8082/tcp
+# dhcp
+firewall-cmd --permanent --zone=public --add-port=67/udp
+firewall-cmd --permanent --zone=public --add-port=520/tcp
+# ntp
+firewall-cmd --permanent --zone=public --add-port=123/udp
+# snmp
+firewall-cmd --permanent --zone=public --add-port=199/tcp
+firewall-cmd --permanent --zone=public --add-port=161/udp
+# rsync
+firewall-cmd --permanent --zone=public --add-port=873/tcp
+# reload
+firewall-cmd --reload

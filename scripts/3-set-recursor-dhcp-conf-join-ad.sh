@@ -33,6 +33,7 @@ echo "setuid=pdns-recursor" >> /etc/pdns-recursor/recursor.conf
 echo "snmp-agent=no" >> /etc/pdns-recursor/recursor.conf
 echo "trace=no" >> /etc/pdns-recursor/recursor.conf
 echo "#webserver=yes" >> /etc/pdns-recursor/recursor.conf
+echo "#webserver-readonly=no" >> /etc/pdns-recursor/recursor.conf
 echo "#webserver-address=0.0.0.0" >> /etc/pdns-recursor/recursor.conf
 echo "#webserver-allow-from=127.0.0.1,::/0" >> /etc/pdns-recursor/recursor.conf
 echo "#webserver-password=pdns-recursor" >> /etc/pdns-recursor/recursor.conf
