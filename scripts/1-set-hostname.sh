@@ -11,6 +11,10 @@ fi
 
 if [ -f params.conf ];
 then
+# yum update
+yum cleann all
+yum update -y
+
 # touch /etc/hosts
 echo "127.0.0.1 ${cod}ncs0${ID} ${cod}ncs0${ID}.tls.ad localhost localhost.localdomain localhost4 localhost4.localdomain4" > /etc/hosts
 echo "::1         localhost localhost.localdomain localhost6 localhost6.localdomain6" >> /etc/hosts
