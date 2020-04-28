@@ -69,23 +69,30 @@ fi
 # add firewalld policies
 echo -e "\n\033[5;4;47;34m Firewalld settings \033[0m\n"
 # ssh
+echo "allow ssh"
 firewall-cmd --permanent --zone=public --add-port=13333/tcp
 # dns
+echo "allow dns"
 firewall-cmd --permanent --zone=public --add-port=53/tcp
 firewall-cmd --permanent --zone=public --add-port=53/udp
 # pdns-recursor webserver
 firewall-cmd --permanent --zone=public --add-port=8082/tcp
 # dhcp
+echo "allow dhcp"
 firewall-cmd --permanent --zone=public --add-port=67/udp
 firewall-cmd --permanent --zone=public --add-port=520/tcp
 # ntp
+echo "allow ntp"
 firewall-cmd --permanent --zone=public --add-port=123/udp
 # snmp
+echo "allow snmp"
 firewall-cmd --permanent --zone=public --add-port=199/tcp
 firewall-cmd --permanent --zone=public --add-port=161/udp
 # rsync
+echo "allow rsync"
 firewall-cmd --permanent --zone=public --add-port=873/tcp
 # reload
+echo "reloading"
 firewall-cmd --reload
 
 echo -e "\n\033[5;4;47;34mCreating sub-interfaces, please wait... \033[0m\n"
