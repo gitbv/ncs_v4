@@ -12,7 +12,7 @@ fi
 if [ -f params.conf ];
 then
 # yum update
-yum cleann all
+yum clean all
 yum update -y
 
 # touch /etc/hosts
