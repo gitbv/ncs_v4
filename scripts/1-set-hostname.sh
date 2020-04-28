@@ -26,7 +26,7 @@ echo "${cod}ncs0${ID}.tls.ad" > /etc/hostname
 hostnamectl set-hostname --static ${cod}ncs0${ID}.tls.ad
 
 echo Hostname:${cod}ncs0${ID}.tls.ad
-echo Server is restarting, please wait and logon again...
+echo Server is restarting, please wait and login to vSphere web console...
 reboot
 
 else
