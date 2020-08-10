@@ -5,16 +5,16 @@ yum -y update
 yum -y install pdns-recursor dhcp pbis-open
 
 cat > /etc/pdns-recursor/forward.conf <<eof
-+green-pass.eu=10.91.226.10,10.91.230.10,10.91.242.10,10.91.246.10
-+tlscontact.com=10.91.82.70,10.91.98.40,10.91.226.10,10.91.230.10,10.91.242.10,10.91.246.10
-+tlscontact.cn=10.91.82.13,10.91.98.17,10.91.50.13,10.91.82.70,10.91.98.40
-+tls.ad=10.91.82.13,10.91.98.17,10.91.50.13
-+tls.vpn=10.91.82.13,10.91.98.17,10.91.50.13
-+tls.vpnc=10.91.82.13,10.91.98.17,10.91.50.13
-+tls.vpnw=10.91.82.13,10.91.98.17,10.91.50.13
-+tls.ext=10.91.82.13,10.91.98.17,10.91.50.13
-+172.in-addr.arpa=10.91.82.13,10.91.98.17,10.91.50.13
-+10.in-addr.arpa=10.91.82.13,10.91.98.17,10.91.50.13
++green-pass.eu=10.91.82.13,10.91.98.17,10.91.50.13,10.91.120.13,10.91.226.10,10.91.230.10,10.91.242.10,10.91.246.10
++tlscontact.com=10.91.82.13,10.91.98.17,10.91.50.13,10.91.120.13,10.91.226.10,10.91.230.10,10.91.242.10,10.91.246.10
++tlscontact.cn=10.91.82.13,10.91.98.17,10.91.50.13,10.91.230.10,10.91.82.70,10.91.98.40
++tls.ad=10.91.82.13,10.91.98.17,10.91.50.13,10.91.120.13
++tls.vpn=10.91.82.13,10.91.98.17,10.91.50.13,10.91.120.13
++tls.vpnc=10.91.82.13,10.91.98.17,10.91.50.13,10.91.120.13
++tls.vpnw=10.91.82.13,10.91.98.17,10.91.50.13,10.91.120.13
++tls.ext=10.91.82.13,10.91.98.17,10.91.50.13,10.91.120.13
++172.in-addr.arpa=10.91.82.13,10.91.98.17,10.91.50.13,10.91.120.13
++10.in-addr.arpa=10.91.82.13,10.91.98.17,10.91.50.13,10.91.120.13
 
 eof
 
@@ -25,7 +25,7 @@ echo "#api-key=pdns-recursor" >> /etc/pdns-recursor/recursor.conf
 echo "dnssec=process-no-validate" >> /etc/pdns-recursor/recursor.conf
 echo "export-etc-hosts=yes" >> /etc/pdns-recursor/recursor.conf
 echo "forward-zones-file=/etc/pdns-recursor/forward.conf" >> /etc/pdns-recursor/recursor.conf
-echo "forward-zones-recurse=.=10.91.82.13;10.91.98.17;10.91.50.13;10.91.120.13;8.8.8.8" >> /etc/pdns-recursor/recursor.conf
+echo "forward-zones-recurse=.=10.91.82.13;10.91.98.17;10.91.120.13" >> /etc/pdns-recursor/recursor.conf
 echo "local-address=0.0.0.0" >> /etc/pdns-recursor/recursor.conf
 echo "#lua-dns-script=/data/web-filter.lua" >> /etc/pdns-recursor/recursor.conf
 echo "setgid=pdns-recursor" >> /etc/pdns-recursor/recursor.conf
