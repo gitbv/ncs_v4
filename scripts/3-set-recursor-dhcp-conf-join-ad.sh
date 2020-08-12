@@ -117,7 +117,7 @@ done
 #sed -i '/.*999-WIFI-dhcp.conf/s/^/#&/g' /etc/dhcp/dhcpd.conf
 sed -i 's/ens192.20 //g' /etc/systemd/system/dhcpd.service
 sed -i 's/ens192.28 //g' /etc/systemd/system/dhcpd.service
-sed -i 's/ens192.999//g' /etc/systemd/system/dhcpd.service
+#sed -i 's/ens192.999//g' /etc/systemd/system/dhcpd.service
 
 systemctl --system daemon-reload
 systemctl enable dhcpd
