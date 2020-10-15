@@ -15,7 +15,6 @@ cat > /etc/pdns-recursor/forward.conf <<eof
 +tls.ext=10.91.82.13,10.91.98.17,10.91.50.13,10.91.120.13
 +172.in-addr.arpa=10.91.82.13,10.91.98.17,10.91.50.13,10.91.120.13
 +10.in-addr.arpa=10.91.82.13,10.91.98.17,10.91.50.13,10.91.120.13
-
 eof
 
 mv /etc/pdns-recursor/recursor.conf /etc/pdns-recursor/recursor.conf.$(date '+%Y%m%d%H%M')
@@ -24,7 +23,7 @@ echo "allow-from=127.0.0.0/8, 10.0.0.0/8, 192.168.0.0/16" > /etc/pdns-recursor/r
 echo "dnssec=process-no-validate" >> /etc/pdns-recursor/recursor.conf
 echo "export-etc-hosts=yes" >> /etc/pdns-recursor/recursor.conf
 echo "forward-zones-file=/etc/pdns-recursor/forward.conf" >> /etc/pdns-recursor/recursor.conf
-echo "forward-zones-recurse=.=10.91.82.13;10.91.98.17;10.91.120.13" >> /etc/pdns-recursor/recursor.conf
+echo "forward-zones-recurse=.=10.91.82.13;10.91.98.17;10.91.120.13;8.8.8.8" >> /etc/pdns-recursor/recursor.conf
 echo "local-address=0.0.0.0" >> /etc/pdns-recursor/recursor.conf
 echo "setgid=pdns-recursor" >> /etc/pdns-recursor/recursor.conf
 echo "setuid=pdns-recursor" >> /etc/pdns-recursor/recursor.conf
